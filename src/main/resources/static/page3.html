@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 3</title>
+</head>
+<body onload="loadUserData()">
+<p id="insertData"></p>
+<form method="post" action="/page3">
+    City: <input name="city"><br>
+    Country: <input name="country"><br>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    async function loadUserData(){
+      const res= await fetch('/getUserData');
+      const user=await res.json();
+      document.getElementById("insertData").innerHTML= `First Name: ${user.firstName} <br> Last Name: ${user.lastName} <br> Email: ${user.email} <br> Phone:${user.phone}`;
+    }
+</script>
+
+</body>
+</html>

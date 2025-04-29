@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 4</title>
+</head>
+<body onload="loadUserData()">
+<p id="insertData"></p>
+<script>
+    async function loadUserData(){
+      const res= await fetch('/getUserData');
+      const user=await res.json();
+      document.getElementById("insertData").innerHTML= `First Name: ${user.firstName} <br> Last Name: ${user.lastName} <br> Email: ${user.email} <br> Phone:${user.phone} <br> City: ${user.city} <br> Country: ${user.country}`;
+    }
+</script>
+
+</body>
+</html>
