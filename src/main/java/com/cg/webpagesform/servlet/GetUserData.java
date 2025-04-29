@@ -1,4 +1,4 @@
-package com.cg.webpagesform.controller;
+package com.cg.webpagesform.servlet;
 
 import com.cg.webpagesform.model.User;
 import jakarta.servlet.annotation.WebServlet;
